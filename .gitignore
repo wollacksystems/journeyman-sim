@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Bundled verification harness (built from scripts/verify-engine.mts)
+scripts/verify-engine.bundle.mjs
+
+# Generated API reference (TypeDoc; published to GitHub Pages by CI, never committed)
+docs/api/
+
+# Environment / secrets
+.env
+.env.*
+
+# Editor / OS
+.DS_Store
+Thumbs.db

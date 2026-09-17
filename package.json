@@ -1,0 +1,51 @@
+{
+  "name": "journeyman-sim",
+  "version": "1.0.0",
+  "description": "Domain-neutral 3D simulation factory: seeded multi-camera scene rig, scripted scenario framework, and a deterministic footage + corpus export pipeline.",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./factory": {
+      "types": "./dist/factory/index.d.ts",
+      "import": "./dist/factory/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --noEmit && tsup",
+    "prepare": "npm run build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "verify": "esbuild scripts/verify-engine.mts --bundle --platform=node --format=esm --external:three --outfile=scripts/verify-engine.bundle.mjs --log-level=warning && node scripts/verify-engine.bundle.mjs && rm scripts/verify-engine.bundle.mjs",
+    "docs:api": "typedoc --options typedoc.json"
+  },
+  "dependencies": {
+    "mediabunny": "^1.56.0",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/three": "^0.180.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^10.10.0",
+    "prettier": "^3.9.6",
+    "tsup": "^8.5.0",
+    "typedoc": "^0.28.20",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.70.0"
+  }
+}

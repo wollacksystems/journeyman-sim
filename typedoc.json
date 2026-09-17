@@ -1,0 +1,24 @@
+// TypeDoc for the library's public API: the two barrels (root engine API +
+// factory subpath) are the sole entry points, so the site documents exactly
+// the sanctioned surface. Everything reachable from src/index.ts and
+// src/factory/index.ts is included; nothing else.
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts", "src/factory/index.ts"],
+  "entryPointStrategy": "resolve",
+  "out": "docs/api",
+  "name": "journeyman-sim",
+  "includeVersion": true,
+  "readme": "none",
+  "githubPages": false,
+  "treatWarningsAsErrors": true,
+  "treatValidationWarningsAsErrors": true,
+  "validation": {
+    "invalidLink": true,
+    "invalidPath": true,
+    "notExported": false
+  },
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeExternals": true
+}
